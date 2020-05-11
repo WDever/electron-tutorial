@@ -1,0 +1,55 @@
+{
+  "name": "electron-quick-start-typescript",
+  "version": "1.0.0",
+  "description": "A minimal Electron application written with Typescript",
+  "main": "build/src/main.js",
+  "scripts": {
+    "watch": "rm -rf build && parcel src/main.ts src/* public/index.html --public-url ../ -d build --out-file=main --target=electron --port 3000",
+    "dev": "electron .",
+    "start": "yarn build && electron ./ts-dist/main.js",
+    "pack": "electron-builder --dir",
+    "dist": "rm -rf dist && yarn build && electron-builder",
+    "build": "rm -rf build && parcel build src/main.ts src/* public/index.html --public-url ../ -d build --out-file=main --target=electron --detailed-report"
+  },
+  "build": {
+    "productName": "This-is-Product-Name",
+    "appId": "com.electum",
+    "files": [
+      "build/*",
+      "build/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.lifestyle"
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start-typescript",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "typescript"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "electron": "^6.0.8",
+    "electron-builder": "^22.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.6.0"
+  }
+}
